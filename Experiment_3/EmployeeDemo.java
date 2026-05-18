@@ -1,8 +1,7 @@
-import java.util.Scanner;
+import java.util.*;
 
 // Base Class
 class Employee {
-
     String name, address, jobTitle;
     double salary;
 
@@ -14,8 +13,7 @@ class Employee {
     }
 
     void calculateBonus() {
-        double bonus = salary * 0.10;
-        System.out.println("Bonus: " + bonus);
+        System.out.println("Bonus: " + salary * 0.10);
     }
 
     void performanceReport() {
@@ -27,25 +25,20 @@ class Employee {
     }
 
     void display() {
-        System.out.println("\n--- Employee Details ---");
-        System.out.println("Name: " + name);
+        System.out.println("\nName: " + name);
         System.out.println("Address: " + address);
         System.out.println("Job Title: " + jobTitle);
         System.out.println("Salary: " + salary);
     }
 }
 
-
-// Manager Class
 class Manager extends Employee {
-
     Manager(String n, String a, double s) {
         super(n, a, "Manager", s);
     }
 
     void calculateBonus() {
-        double bonus = salary * 0.20;
-        System.out.println("Manager Bonus: " + bonus);
+        System.out.println("Manager Bonus: " + salary * 0.20);
     }
 
     void manageProject() {
@@ -54,16 +47,13 @@ class Manager extends Employee {
 }
 
 
-// Developer Class
 class Developer extends Employee {
-
     Developer(String n, String a, double s) {
         super(n, a, "Developer", s);
     }
 
     void calculateBonus() {
-        double bonus = salary * 0.15;
-        System.out.println("Developer Bonus: " + bonus);
+        System.out.println("Developer Bonus: " + salary * 0.15);
     }
 
     void manageProject() {
@@ -71,17 +61,13 @@ class Developer extends Employee {
     }
 }
 
-
-// Programmer Class
 class Programmer extends Employee {
-
     Programmer(String n, String a, double s) {
         super(n, a, "Programmer", s);
     }
 
     void calculateBonus() {
-        double bonus = salary * 0.12;
-        System.out.println("Programmer Bonus: " + bonus);
+        System.out.println("Programmer Bonus: " + salary * 0.12);
     }
 
     void manageProject() {
@@ -90,33 +76,26 @@ class Programmer extends Employee {
 }
 
 
-// Main Class
 public class EmployeeDemo {
-
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Select Employee Type:");
-        System.out.println("1. Manager");
-        System.out.println("2. Developer");
-        System.out.println("3. Programmer");
-        System.out.print("Enter choice: ");
-        int choice = sc.nextInt();
-        sc.nextLine();  // clear buffer
+        System.out.println("1.Manager  2.Developer  3.Programmer");
+        System.out.print("Choice: ");
+        int ch = sc.nextInt();
+        sc.nextLine();
 
-        System.out.print("Enter Name: ");
+        System.out.print("Name: ");
         String name = sc.nextLine();
-
-        System.out.print("Enter Address: ");
+        System.out.print("Address: ");
         String address = sc.nextLine();
-
-        System.out.print("Enter Salary: ");
+        System.out.print("Salary: ");
         double salary = sc.nextDouble();
 
-        Employee emp = null;
+        Employee emp;
 
-        switch (choice) {
+        switch (ch) {
             case 1:
                 emp = new Manager(name, address, salary);
                 break;
@@ -127,16 +106,13 @@ public class EmployeeDemo {
                 emp = new Programmer(name, address, salary);
                 break;
             default:
-                System.out.println("Invalid choice");
-                System.exit(0);
+                System.out.println("Invalid!");
+                return;
         }
 
         emp.display();
         emp.calculateBonus();
         emp.performanceReport();
         emp.manageProject();
-
-        sc.close();
     }
 }
- 

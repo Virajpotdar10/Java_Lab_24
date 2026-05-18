@@ -1,22 +1,18 @@
 package Experiment_6;
 
 import java.util.Scanner;
-
-// Custom Exception for Low Balance
 class LowBalanceException extends Exception {
     public LowBalanceException(String message) {
         super(message);
     }
 }
 
-// Custom Exception for Negative Number
 class NegativeNumberException extends Exception {
     public NegativeNumberException(String message) {
         super(message);
     }
 }
 
-// BankAccount Class
 class BankAccount {
 
     double balance;
@@ -49,7 +45,6 @@ class BankAccount {
     }
 }
 
-// Main Class
 public class BankApp {
 
     public static void main(String[] args) {

@@ -1,8 +1,6 @@
-import java.util.Scanner;
+import java.util.*;
 
-// Step 1: Abstract Class
 abstract class Shape {
-
     double dim1, dim2;
 
     Shape(double a, double b) {
@@ -10,11 +8,9 @@ abstract class Shape {
         dim2 = b;
     }
 
-    abstract void area();   // abstract method
+    abstract void area();
 }
 
-
-// Step 2: Rectangle Class
 class Rectangle extends Shape {
 
     Rectangle(double l, double b) {
@@ -22,55 +18,41 @@ class Rectangle extends Shape {
     }
 
     void area() {
-        double result = dim1 * dim2;
-        System.out.println("Area of Rectangle = " + result);
+        System.out.println("Area of Rectangle = " + (dim1 * dim2));
     }
 }
 
-
-// Step 3: Triangle Class
 class Triangle extends Shape {
-
     Triangle(double base, double height) {
         super(base, height);
     }
 
     void area() {
-        double result = 0.5 * dim1 * dim2;
-        System.out.println("Area of Triangle = " + result);
+        System.out.println("Area of Triangle = " + (0.5 * dim1 * dim2));
     }
 }
 
-
-// Step 4: Main Class
 public class ShapeDemo {
-
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
-        // Rectangle input
-        System.out.print("Enter length of rectangle: ");
+        System.out.print("Rectangle Length: ");
         double l = sc.nextDouble();
 
-        System.out.print("Enter breadth of rectangle: ");
+        System.out.print("Rectangle Breadth: ");
         double b = sc.nextDouble();
 
-        Shape rect = new Rectangle(l, b);
-
-        // Triangle input
-        System.out.print("Enter base of triangle: ");
+        System.out.print("Triangle Base: ");
         double base = sc.nextDouble();
 
-        System.out.print("Enter height of triangle: ");
+        System.out.print("Triangle Height: ");
         double height = sc.nextDouble();
 
+        Shape rect = new Rectangle(l, b);
         Shape tri = new Triangle(base, height);
 
-        System.out.println("\n--- Areas ---");
         rect.area();
         tri.area();
-
-        sc.close();
     }
 }

@@ -1,6 +1,7 @@
+package Experiment_6;
 import java.util.Scanner;
 
-// Custom Exception
+
 class OddNumberException extends Exception {
     public OddNumberException(String message) {
         super(message);
@@ -9,7 +10,6 @@ class OddNumberException extends Exception {
 
 public class OddNumberTest {
 
-    // Method that checks number
     static void checkNumber(int num) throws OddNumberException {
         if (num % 2 != 0) {
             throw new OddNumberException("Number is Odd!");
@@ -22,7 +22,7 @@ public class OddNumberTest {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter an integer: ");
+        System.out.print("Enter Number: ");
         int number = sc.nextInt();
 
         try {

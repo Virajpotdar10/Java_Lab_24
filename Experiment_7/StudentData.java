@@ -2,14 +2,10 @@ import java.io.*;
 import java.util.Scanner;
 
 public class StudentData {
-
-    public static void main(String[] args) {
+public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-
         try {
-
-            // Writing data to file
             FileOutputStream fos = new FileOutputStream("student.txt");
             DataOutputStream dos = new DataOutputStream(fos);
 

@@ -5,9 +5,7 @@ import Experiment_6.ExceptionHandlingdemo.*;
 public class MainProgram {
 
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
-
         System.out.print("Enter first number: ");
         int a = sc.nextInt();
 
@@ -26,3 +24,6 @@ public class MainProgram {
         sc.close();
     }
 }
+
+
+
